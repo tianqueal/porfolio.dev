@@ -1,30 +1,33 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import { DEFAULT_LANG, type Language } from '@/i18n/languages';
+import ExperienceItem from './ExperienceItem.astro';
+import { useT } from '@/i18n/utils';
+
+const lang = Astro.currentLocale as Language;
+const t = useT(lang || DEFAULT_LANG);
+
 const EXPERIENCE = [
-  {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
-    description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
-  },
-  {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
-    description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
-  },
-]
+	{
+		date: t('EXPERIENCE.[0].date'),
+		title: t('EXPERIENCE.[0].title'),
+		company: t('EXPERIENCE.[0].company'),
+		description: t('EXPERIENCE.[0].description'),
+	},
+	{
+		date: t('EXPERIENCE.[1].date'),
+		title: t('EXPERIENCE.[1].title'),
+		company: t('EXPERIENCE.[1].company'),
+		description: t('EXPERIENCE.[1].description'),
+	},
+];
 ---
 
 <ol class="relative mt-16">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
+	{
+		EXPERIENCE.map((experience) => (
+			<li>
+				<ExperienceItem {...experience} />
+			</li>
+		))
+	}
 </ol>
