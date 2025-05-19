@@ -11,10 +11,10 @@ import SectionContainer from '@/components/SectionContainer.astro';
 import Hero from '@/components/Hero.astro';
 import TitleSection from '@/components/TitleSection.astro';
 import { useT } from '@/i18n/utils';
-import { DEFAULT_LANG, Language } from '@/i18n/languages';
+import { Language } from '@/i18n/languages';
 
-const lang = Astro.currentLocale as Language;
-const t = useT(lang || DEFAULT_LANG);
+const lang = Language.EN;
+const t = useT(lang);
 ---
 
 <Layout title={t('SEO.title')} description={t('SEO.description')}>
