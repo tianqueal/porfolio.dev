@@ -4,7 +4,9 @@
 	"version": "0.0.1",
 	"author": {
 		"name": "Christian Alvarado",
-		"email": "tianqueal@gmail.com"
+		"email": "tianqueal@gmail.com",
+		"url": "https://github.com/tianqueal",
+		"username": "tianqueal"
 	},
 	"scripts": {
 		"dev": "astro dev",
