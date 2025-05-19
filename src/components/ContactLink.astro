@@ -1,0 +1,18 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import Mail from './icons/Mail.astro';
+
+interface HeaderLink {
+	title: string;
+	label: string;
+	url: string;
+}
+
+const { title, label, url } = Astro.props;
+---
+
+<a href={url} class="block px-2 py-2 transition hover:scale-125 md:hidden">
+	<Mail class="size-5 transition-all" />
+</a>
+
+<HeaderLink className="hidden md:block" title={title} label={label} url={url} />
