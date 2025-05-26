@@ -2,10 +2,10 @@
 import Layout from '@/layouts/Layout.astro';
 
 import AboutMe from '@/components/AboutMe.astro';
-import Briefcase from '@/components/icons/Briefcase.astro';
-import CodeIcon from '@/components/icons/Code.astro';
+import BriefcaseIcon from '@/components/icons/BriefcaseIcon.astro';
+import CodeIcon from '@/components/icons/CodeIcon.astro';
 import Experience from '@/components/Experience.astro';
-import ProfileCheck from '@/components/icons/ProfileCheck.astro';
+import ProfileCheckIcon from '@/components/icons/ProfileCheckIcon.astro';
 import Projects from '@/components/Projects.astro';
 import SectionContainer from '@/components/SectionContainer.astro';
 import Hero from '@/components/Hero.astro';
@@ -26,7 +26,7 @@ const t = useT(lang || DEFAULT_LANG);
 		<div class="space-y-24">
 			<SectionContainer id="experience">
 				<TitleSection>
-					<Briefcase class="size-8" />
+					<BriefcaseIcon class="size-8" />
 					{t('EXPERIENCE.title')}
 				</TitleSection>
 				<Experience />
@@ -42,7 +42,7 @@ const t = useT(lang || DEFAULT_LANG);
 
 			<SectionContainer id="about-me">
 				<TitleSection>
-					<ProfileCheck class="size-8" />
+					<ProfileCheckIcon class="size-8" />
 					{t('ABOUT_ME.title')}
 				</TitleSection>
 				<AboutMe />
