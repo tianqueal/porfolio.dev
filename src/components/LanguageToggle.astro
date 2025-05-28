@@ -1,8 +1,11 @@
 ---
 import LanguageIcon from './icons/LanguageIcon.astro';
-import { Language, LANGUAGES, type LanguageData } from '@/i18n/languages';
+import { Language, LANGUAGES, type LanguageData, DEFAULT_LANG } from '@/i18n/languages';
+import { useT } from '@/i18n/utils';
 
 const languages = Object.entries(LANGUAGES) as Array<[Language, LanguageData]>;
+const lang = Astro.currentLocale as Language;
+const t = useT(lang || DEFAULT_LANG);
 ---
 
 <div class="relative ml-1 mr-1">
@@ -11,7 +14,7 @@ const languages = Object.entries(LANGUAGES) as Array<[Language, LanguageData]>;
 		id="languages-toggle-btn"
 		class="flex appearance-none border-none transition hover:scale-125"
 	>
-		<span class="sr-only"> </span>
+		<span class="sr-only">{t('LANGUAGE.label')}</span>
 		<LanguageIcon id="language" class="language-toggle-icon size-5 transition-all" />
 	</button>
 	<div
@@ -22,8 +25,13 @@ const languages = Object.entries(LANGUAGES) as Array<[Language, LanguageData]>;
 		<ul>
 			{
 				languages.map(([lang, langData]) => (
-					<li class="languages-menu-option cursor-default rounded-sm px-2 py-1.5 hover:bg-neutral-400/40 dark:hover:bg-gray-500/50">
-						<a href={`/${lang}/`} title={langData.label} aria-label={langData.label}>
+					<li class="languages-menu-option">
+						<a
+							href={`/${lang}/`}
+							title={langData.label}
+							aria-label={langData.label}
+							class="block w-full rounded-sm px-2 py-1.5 hover:bg-neutral-400/40 dark:hover:bg-gray-500/50"
+						>
 							{langData.label}
 						</a>
 					</li>
