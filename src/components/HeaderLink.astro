@@ -1,0 +1,22 @@
+---
+interface Props {
+	className?: string;
+	title: string;
+	label: string;
+	url: string;
+}
+
+const { className, title, label, url } = Astro.props;
+---
+
+<a
+	class:list={[
+		'relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500',
+		className,
+	]}
+	tabindex="0"
+	aria-label={label}
+	href={url}
+>
+	{title}
+</a>
