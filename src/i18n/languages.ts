@@ -6,7 +6,7 @@ export enum Language {
 /**
  * label: Full name
  * iso: ISO standard code
- * locale: Region Code ("en-US", "es-ES", "ru-RU")
+ * locale: Region Code
  * dir: Language writing direction
  * shortLabel: Abbreviation in its own official language
  */
