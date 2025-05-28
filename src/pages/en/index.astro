@@ -1,52 +1,8 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-
-import AboutMe from '@/components/AboutMe.astro';
-import BriefcaseIcon from '@/components/icons/BriefcaseIcon.astro';
-import CodeIcon from '@/components/icons/CodeIcon.astro';
-import Experience from '@/components/Experience.astro';
-import ProfileCheckIcon from '@/components/icons/ProfileCheckIcon.astro';
-import Projects from '@/components/Projects.astro';
-import SectionContainer from '@/components/SectionContainer.astro';
-import Hero from '@/components/Hero.astro';
-import TitleSection from '@/components/TitleSection.astro';
-import { useT } from '@/i18n/utils';
 import { Language } from '@/i18n/languages';
+import IndexTemplate from '@/components/IndexTemplate.astro';
 
 const lang = Language.EN;
-const t = useT(lang);
 ---
 
-<Layout title={t('SEO.title')} description={t('SEO.description')}>
-	<main class="px-4">
-		<SectionContainer class="py-16 md:py-36">
-			<Hero />
-		</SectionContainer>
-
-		<div class="space-y-24">
-			<SectionContainer id="experience">
-				<TitleSection>
-					<BriefcaseIcon class="size-8" />
-					{t('EXPERIENCE.title')}
-				</TitleSection>
-				<Experience />
-			</SectionContainer>
-
-			<SectionContainer id="projects">
-				<TitleSection>
-					<CodeIcon class="size-7" />
-					{t('PROJECTS.title')}
-				</TitleSection>
-				<Projects />
-			</SectionContainer>
-
-			<SectionContainer id="about-me">
-				<TitleSection>
-					<ProfileCheckIcon class="size-8" />
-					{t('ABOUT_ME.title')}
-				</TitleSection>
-				<AboutMe />
-			</SectionContainer>
-		</div>
-	</main>
-</Layout>
+<IndexTemplate lang={lang} />
