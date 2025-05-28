@@ -1,11 +1,13 @@
 import CSSIcon from '@/components/icons/CSSIcon.astro';
 import HTMLIcon from '@/components/icons/HTMLIcon.astro';
+import JavaScriptIcon from '@/components/icons/JavaScriptIcon.astro';
 import LaravelIcon from '@/components/icons/LaravelIcon.astro';
 import MotionIcon from '@/components/icons/MotionIcon.astro';
 import NextJSIcon from '@/components/icons/NextJSIcon.astro';
 import ReactIcon from '@/components/icons/ReactIcon.astro';
 import ReactRouterIcon from '@/components/icons/ReactRouterIcon.astro';
 import TailwindIcon from '@/components/icons/TailwindIcon.astro';
+import TypeScriptIcon from '@/components/icons/TypeScriptIcon.astro';
 
 const TAGS = {
 	HTML: {
@@ -17,6 +19,16 @@ const TAGS = {
 		name: 'CSS',
 		class: 'bg-blue-600 dark:bg-blue-950 text-white',
 		icon: CSSIcon,
+	},
+	JAVASCRIPT: {
+		name: 'JavaScript',
+		class: 'bg-yellow-600 dark:bg-yellow-950 text-white',
+		icon: JavaScriptIcon,
+	},
+	TYPESCRIPT: {
+		name: 'TypeScript',
+		class: 'bg-blue-600 dark:bg-blue-950 text-white',
+		icon: TypeScriptIcon,
 	},
 	NEXT: {
 		name: 'Next.js',
