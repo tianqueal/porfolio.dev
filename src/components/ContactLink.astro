@@ -11,7 +11,12 @@ interface HeaderLink {
 const { title, label, url } = Astro.props;
 ---
 
-<a href={url} class="block px-2 py-2 transition hover:scale-125 md:hidden">
+<a
+	href={url}
+	tabindex="0"
+	role="button"
+	class="block px-2 py-2 transition hover:scale-125 md:hidden"
+>
 	<MailIcon class="size-5 transition-all" />
 </a>
 
